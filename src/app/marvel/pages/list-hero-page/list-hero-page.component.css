@@ -1,0 +1,16 @@
+.characters-container {
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 10px;
+}
+
+.results-counter {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+  margin-left: 20px;
+}

@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:black;
+  padding: 12px 20px;
+}
+
+.navbar__logo img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.navbar__logo img:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,46 @@
+<shared-menu-box></shared-menu-box>
+
+<div class="container-1">
+  <div class="container-2">
+    <div class="container-img">
+      <img
+        [src]="character.thumbnail.path + '.' + character.thumbnail.extension"
+        [alt]="character.name"
+      />
+    </div>
+    <div class="character-info">
+      <div class="character-name" [class.buttonRed]="isFavorite" >
+        <div class="name">
+          <p>{{ character.name }}</p>
+        </div>
+        <div class="heart">
+          <button class="favorites-button" [class.buttonRed]="isFavorite" (click)="toggleFavorite()">
+            <span class="favorites-button__icon">♥</span>
+          </button>
+        </div>
+      </div>
+      <div class="character-description">
+        <p>{{ character.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comics-title-container">
+  <h1>COMICS</h1>
+</div>
+
+<div class="container-abajo">
+  <div class="comics-container">
+    <div *ngFor="let comic of comics">
+      <img
+        [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+        [alt]="comic.title"
+      />
+      <div class="comics-title">
+        <p>{{ comic.title }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

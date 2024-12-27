@@ -1,0 +1,13 @@
+<div class="character-card">
+  <img
+    [src]="character.thumbnail.path + '.' + character.thumbnail.extension"
+    [alt]="character.name"
+    (click)="navigateToInfo()"
+  />
+  <div class="character-card__info" [class.buttonRed]="isFavorite" >
+    <p>{{ character.name }}</p>
+    <button class="favorites-button" [class.buttonRed]="isFavorite" (click)="toggleFavorite()">
+      <span class="favorites-button__icon">♥</span>
+    </button>
+  </div>
+</div>

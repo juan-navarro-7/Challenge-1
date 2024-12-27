@@ -1,27 +1,96 @@
-# MarvelHeroes2
+# Marvel Heroes Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+## Descripción
+Este proyecto es una aplicación de Angular que utiliza la API de Marvel para mostrar información sobre héroes, cómics y otros elementos relacionados. Los usuarios pueden buscar personajes, agregar favoritos y explorar detalles de cada héroe.
 
-## Development server
+## Estructura del Proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+src/
+├── app/
+│   ├── interface/
+│   │   ├── comics.ts      
+│   │   ├── marvel.ts     
+│   ├── marvel/
+│   │   ├── pages/
+│   │   │   ├── favorites-page/  
+│   │   │   ├── info-hero-page/  
+│   │   │   ├── list-hero-page/
+│   │   ├── marvel-routing.module.ts 
+│   │   ├── marvel.module.ts         
+│   ├── services/
+│   │   ├── favorites.service.ts     
+│   │   ├── marvel-api.service.ts  
+│   ├── shared/
+│   │   ├── components/
+│   │   │   ├── card/      
+│   │   │   ├── heart/     
+│   │   │   ├── menu/   
+│   │   │   ├── search/    
+│   │   ├── shared.module.ts  
+│   ├── assets/
+│   │   ├── marvel-logo.png  
+│   ├── app-routing.module.ts 
+│   ├── app.component.*       
+│   ├── app.module.ts         
+```
 
-## Code scaffolding
+## Detalles de las Carpetas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### **interface/**
+Contiene definiciones de interfaces TypeScript para estructurar los datos obtenidos de la API de Marvel:
+- `comics.ts`: Estructura de datos para los cómics.
+- `marvel.ts`: Estructura de datos para personajes, eventos y más.
 
-## Build
+### **marvel/pages/**
+Contiene las páginas principales de la aplicación:
+- `favorites-page`: Muestra los personajes favoritos del usuario.
+- `info-hero-page`: Muestra información detallada sobre un personaje específico.
+- `list-hero-page`: Página inicial para listar personajes obtenidos de la API de Marvel.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### **services/**
+Servicios que manejan la lógica del negocio:
+- `favorites.service.ts`: Administra los personajes marcados como favoritos por el usuario.
+- `marvel-api.service.ts`: Realiza las llamadas a la API de Marvel para obtener datos como personajes y cómics.
 
-## Running unit tests
+### **shared/components/**
+Componentes reutilizables en toda la aplicación:
+- `card/`: Componente de tarjeta para mostrar personajes.
+- `heart/`: Componente para ir a la página de favoritos y llevar el contador
+- `menu/`: Barra de navegación.
+- `search/`: Barra de búsqueda para filtrar personajes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### **assets/**
+Contiene recursos estáticos como imágenes y estilos.
 
-## Running end-to-end tests
+### **app.component.* y app.module.ts**
+- `app.component.*`: Configuración del componente principal de Angular.
+- `app.module.ts`: Módulo raíz de la aplicación.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Configuración de Rutas
+- **`app-routing.module.ts`**: Define las rutas principales de la aplicación.
+- **`marvel-routing.module.ts`**: Maneja las rutas específicas del módulo de Marvel, como las páginas de héroes y favoritos.
 
-## Further help
+## Cómo Ejecutar el Proyecto
+1. Clona el repositorio.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Ejecuta el proyecto en modo de desarrollo:
+   ```bash
+   ng serve
+   ```
+4. Abre la aplicación en [http://localhost:4200](http://localhost:4200).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Funcionalidades Principales
+- **Búsqueda de personajes**: Busca héroes usando el cuadro de búsqueda.
+- **Favoritos**: Marca personajes como favoritos y accede a ellos desde la página de favoritos.
+- **Información detallada**: Accede a detalles de personajes individuales.
+
+## Dependencias
+- **Angular**: Framework principal para construir la aplicación.
+- **RxJS**: Para manejar programación reactiva.
+- **API de Marvel**: Fuente de datos para la aplicación.
+
+

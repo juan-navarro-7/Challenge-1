@@ -1,0 +1,9 @@
+<shared-menu-box></shared-menu-box>
+
+<div class="characters-container">
+  <shared-card-box
+    *ngFor="let character of favoriteCharacters"
+    [character]="character"
+  >
+  </shared-card-box>
+</div>

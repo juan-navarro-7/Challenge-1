@@ -1,0 +1,15 @@
+<shared-menu-box></shared-menu-box>
+<shared-search-box (charactersFound)="updateCharacters($event)"></shared-search-box>
+
+<div class="results-counter">
+  <p>{{ totalCharacters }} RESULTS</p> <!-- Mostrar el contador -->
+</div>
+
+<div class="characters-container">
+  <shared-card-box
+    *ngFor="let character of characters"
+    [character]="character"
+    >
+  </shared-card-box>
+</div>
+
